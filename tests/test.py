@@ -3,6 +3,8 @@ from sklearn.datasets import load_iris
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import pickle
 import seaborn as sns
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt 
 import os
 
@@ -32,7 +34,8 @@ plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix')
 
-path = os.path.join(os.path.dirname(os.getcwd()),'outputs')
+path = os.getcwd()
+path = os.path.join(path,'outputs')
 os.makedirs(path,exist_ok=True)
 
 confusion_metrix_path = os.path.join(path,'confusion_metrix.jpg')
